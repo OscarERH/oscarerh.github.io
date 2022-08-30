@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -27,13 +27,16 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
         <Link href="/users">
           <a>Users List</a>
         </Link>{' '}
-        | <a href="/api/users">Users API</a>
+        |
+        <Link href="/api/users">
+          <a>Users API</a>
+        </Link>
       </nav>
     </header>
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>I&aposm here to stay (Footer)</span>
     </footer>
   </div>
 )

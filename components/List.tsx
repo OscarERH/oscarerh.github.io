@@ -1,4 +1,3 @@
-import * as React from 'react'
 import ListItem from 'components/ListItem'
 import { User } from 'interfaces'
 
