@@ -5,7 +5,19 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "next": "latest",
@@ -23,6 +35,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
     "typescript": "^4"
   }
