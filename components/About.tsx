@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-export default function Presentation(): ReactElement {
+export default function About(): ReactElement {
   return (
     <div className='mx-auto max-w-screen-lg px-3 py-6'>
       <div className='flex flex-col items-center md:flex-row md:justify-between md:gap-x-24'>
@@ -23,10 +23,11 @@ export default function Presentation(): ReactElement {
             >
               Enigma
             </a>
-            . I mainly code in TypeScript and PHP but in 2020 I fell in love with
-            Next.js, React, NodeJS and so many other modern web frameworks. I am
-            always learning. Currently I'm teaching myself data structures and
-            algorithms in JavaScript, here you will find some of my insights.
+            . I mainly code in TypeScript and PHP but in 2020 I fell in love
+            with Next.js, React, NodeJS and so many other modern web frameworks.
+            I am always learning. Currently I'm teaching myself data structures
+            and algorithms in JavaScript, here you will find some of my
+            insights.
           </p>
         </div>
       </div>

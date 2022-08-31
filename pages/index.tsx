@@ -1,10 +1,10 @@
 import Layout from 'components/Layout'
 import PostList from 'components/PostList'
-import Presentation from 'components/Presentation'
+import About from 'components/About'
 
 const IndexPage = () => (
   <Layout title='OscarERH'>
-    <Presentation />
+    <About />
     <PostList />
   </Layout>
 )
