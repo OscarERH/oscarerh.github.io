@@ -1,12 +1,13 @@
 import Layout from 'components/Layout'
 import PostList from 'components/PostList'
 import About from 'components/About'
+import { ReactElement } from 'react'
 
-const IndexPage = () => (
-  <Layout title='OscarERH'>
-    <About />
-    <PostList />
-  </Layout>
-)
-
-export default IndexPage
+export default function Home(): ReactElement {
+  return (
+    <Layout title='OscarERH'>
+      <About />
+      <PostList />
+    </Layout>
+  )
+}
