@@ -4,7 +4,9 @@ import Link from 'next/link'
 export default function Document() {
   return (
     <Html>
-      <Head />
+      <Head>
+        <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
+      </Head>
       <body className='bg-slate-900 text-gray-100 min-h-screen'>
         <Main />
         <NextScript />
