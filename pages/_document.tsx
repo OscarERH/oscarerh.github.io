@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang='en'>
       <Head>
         <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
       </Head>
