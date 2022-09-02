@@ -52,6 +52,7 @@ const Blog = ({ posts }: Props) => {
                   <div className='overflow-hidden rounded-md bg-slate-800'>
                     <div className='aspect-w-3 aspect-h-2'>
                       <Image
+                        alt={`${p.slug} cover`}
                         src={p.cover}
                         width='500'
                         height='500'
