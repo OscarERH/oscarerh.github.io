@@ -1,6 +1,13 @@
+import { format } from 'date-fns'
+import { Post } from 'interfaces'
+import Image from 'next/image'
+import Link from 'next/link'
 import { ReactElement } from 'react'
 
-export default function PostList(): ReactElement {
+type Props = {
+  posts: Post[]
+}
+export default function PostList({ posts }: Props): ReactElement {
   return (
     <div className='mx-auto max-w-screen-lg px-3 py-6'>
       <div className='mb-6 text-2xl font-bold'>
@@ -12,84 +19,38 @@ export default function PostList(): ReactElement {
             </span>
           </div>
           <div className='text-sm'>
-            <a href='/posts'>View all Posts →</a>
+            <Link href='/blog'>
+              <a>View all Posts →</a>
+            </Link>
           </div>
         </div>
       </div>
       <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        <a
-          className='hover:translate-y-1'
-          href='/sixth-post'
-        >
-          <div className='overflow-hidden rounded-md bg-slate-800'>
-            <div className='aspect-w-3 aspect-h-2'>
-              <img
-                className='h-full w-full object-cover object-center'
-                src='https://i.imgur.com/71MbO9v.jpeg'
-                alt='Image post'
-                loading='lazy'
-              />
-            </div>
-            <div className='px-3 pt-4 pb-6 text-center'>
-              <h2 className='text-xl font-semibold'>Typography example</h2>
-              <div className='mt-1 text-xs text-gray-400'>Feb 6, 2020</div>
-              <div className='mt-2 text-sm'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                vero esse non molestias eos excepturi.
-              </div>
-            </div>
-          </div>
-        </a>
-        <a
-          className='hover:translate-y-1'
-          href='/fifth-post'
-        >
-          <div className='overflow-hidden rounded-md bg-slate-800'>
-            <div className='aspect-w-3 aspect-h-2'>
-              <img
-                className='h-full w-full object-cover object-center'
-                src='https://i.imgur.com/71MbO9v.jpeg'
-                alt='Image post 2'
-                loading='lazy'
-              />
-            </div>
-            <div className='px-3 pt-4 pb-6 text-center'>
-              <h2 className='text-xl font-semibold'>
-                5th Lorem ipsum dolor sit
-              </h2>
-              <div className='mt-1 text-xs text-gray-400'>Feb 5, 2020</div>
-              <div className='mt-2 text-sm'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                vero esse non molestias eos excepturi.
-              </div>
-            </div>
-          </div>
-        </a>
-        <a
-          className='hover:translate-y-1'
-          href='/forth-post'
-        >
-          <div className='overflow-hidden rounded-md bg-slate-800'>
-            <div className='aspect-w-3 aspect-h-2'>
-              <img
-                className='h-full w-full object-cover object-center'
-                src='https://i.imgur.com/71MbO9v.jpeg'
-                alt='Image post 3'
-                loading='lazy'
-              />
-            </div>
-            <div className='px-3 pt-4 pb-6 text-center'>
-              <h2 className='text-xl font-semibold'>
-                4th Lorem ipsum dolor sit
-              </h2>
-              <div className='mt-1 text-xs text-gray-400'>Feb 4, 2020</div>
-              <div className='mt-2 text-sm'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                vero esse non molestias eos excepturi.
-              </div>
-            </div>
-          </div>
-        </a>
+        {posts.map((p, i) => {
+          return (
+            <Link href={`/blog/${p.slug}`} key={i}>
+              <a className='hover:translate-y-1'>
+                <div className='overflow-hidden rounded-md bg-slate-800'>
+                  <div className='aspect-w-3 aspect-h-2'>
+                    <Image
+                      src={p.cover}
+                      width='500'
+                      height='500'
+                      className='h-full w-full object-cover object-center'
+                      loading='lazy'
+                    />
+                  </div>
+                  <div className='px-3 pt-4 pb-6 text-center'>
+                    <h2 className='text-2xl font-semibold'>{p.title}</h2>
+                    <div className='mt-1 text-sm text-gray-400'>
+                      {format(new Date(p.date), 'MMMM dd yyyy')}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

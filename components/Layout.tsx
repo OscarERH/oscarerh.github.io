@@ -16,10 +16,10 @@ const Layout = ({ children, title = 'OscarERH' }: Props) => (
     </Head>
     <div>
       <div className='mx-auto max-w-screen-lg px-3 py-6'>
-        <div className='flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between'>
+        <div className='flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between sticky'>
           <Link href='/'>
             <a>
-              <div className='flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent'>
+              <div className='flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent sticky'>
                 OscarERH's Blog
               </div>
             </a>
@@ -27,7 +27,7 @@ const Layout = ({ children, title = 'OscarERH' }: Props) => (
           <nav>
             <ul className='flex gap-x-3 font-medium text-gray-200'>
               <li className='hover:text-white'>
-                <Link href='/posts'>
+                <Link href='/blog'>
                   <a>Blog</a>
                 </Link>
               </li>
