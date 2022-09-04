@@ -39,9 +39,7 @@ export const getStaticProps = async () => {
     }
   })
 
-  const sortedPosts = posts
-    .filter((_, i) => i < 9)
-    .sort((a, b) => b.date - a.date)
+  const sortedPosts = posts.slice(0, 9).sort((a, b) => b.date - a.date)
 
   const parsedDatePosts = sortedPosts.map((post) => {
     return {
