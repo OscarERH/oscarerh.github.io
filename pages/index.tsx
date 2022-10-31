@@ -1,13 +1,12 @@
+import About from 'components/About'
 import Layout from 'components/Layout'
 import PostList from 'components/PostList'
-import About from 'components/About'
-import { ReactElement } from 'react'
 import fs from 'fs'
 import glob from 'glob-promise'
 import matter from 'gray-matter'
-import path from 'path'
-import { format } from 'date-fns'
 import { Post } from 'interfaces'
+import path from 'path'
+import { ReactElement } from 'react'
 
 type Props = {
   posts: Post[]
