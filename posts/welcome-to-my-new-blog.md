@@ -1,6 +1,6 @@
 ---
 title: Welcome to my new blog
-date: 2022-09-01
+date: 2022,09,01
 cover: https://i.imgur.com/gR7obHn.jpeg
 ---
 
