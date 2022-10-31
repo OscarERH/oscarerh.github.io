@@ -41,11 +41,5 @@ export const getStaticProps = async () => {
 
   const sortedPosts = posts.slice(0, 9).sort((a, b) => b.date - a.date)
 
-  const parsedDatePosts = sortedPosts.map((post) => {
-    return {
-      ...post,
-      date: format(post.date, 'MM/dd/yyyy')
-    }
-  })
-  return { props: { posts: parsedDatePosts } }
+  return { props: { posts: sortedPosts } }
 }

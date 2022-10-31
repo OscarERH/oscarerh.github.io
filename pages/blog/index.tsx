@@ -28,13 +28,7 @@ export const getStaticProps = async () => {
 
   const sortedPosts = posts.sort((a, b) => b.date - a.date)
 
-  const parsedDatePosts = sortedPosts.map((post) => {
-    return {
-      ...post,
-      date: format(post.date, 'MM/dd/yyyy')
-    }
-  })
-  return { props: { posts: parsedDatePosts } }
+  return { props: { posts: sortedPosts } }
 }
 
 type Props = {
@@ -45,9 +39,9 @@ const Blog = ({ posts }: Props) => {
     <Layout title='OscarERH | Blog'>
       <div className='mx-auto max-w-screen-lg px-3 py-6'>
         <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-          {posts.map((p, i) => {
+          {posts.map((p) => {
             return (
-              <Link href={`/blog/${p.slug}`} key={i}>
+              <Link href={`/blog/${p.slug}`} key={p.slug}>
                 <a className='hover:translate-y-1'>
                   <div className='overflow-hidden rounded-md bg-slate-800'>
                     <div className='aspect-w-3 aspect-h-2'>

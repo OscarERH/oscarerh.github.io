@@ -26,9 +26,9 @@ export default function PostList({ posts }: Props): ReactElement {
         </div>
       </div>
       <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        {posts.map((p, i) => {
+        {posts.map((p) => {
           return (
-            <Link href={`/blog/${p.slug}`} key={i}>
+            <Link href={`/blog/${p.slug}`} key={p.slug}>
               <a className='hover:translate-y-1'>
                 <div className='overflow-hidden rounded-md bg-slate-800'>
                   <div className='aspect-w-3 aspect-h-2'>
